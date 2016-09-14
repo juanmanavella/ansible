@@ -6,8 +6,8 @@
     public_key: /root/.ssh/id_rsa.pub
   roles:
    - common
-   - newrelic
-   - bash_history
-   - login_alerts 
-   - iptables
-   - graylog
+#   - newrelic
+#   - bash_history
+#   - login_alerts 
+#   - iptables
+#   - graylog
