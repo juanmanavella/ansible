@@ -1,0 +1,22 @@
+---
+- name: Add authorized key
+  authorized_key:
+    user: "{{ username }}"
+    key: "{{ lookup('file', public_key) }}"
+
+
+- name: Upgrade packages
+  apt: upgrade=safe
+
+  
+- name: Install packages
+  apt:
+    name: "{{ item }}"
+    state: present
+    update_cache: yes
+  with_items:
+  - fail2ban
+  - git-core
+  - redis-server
+  - iptables
+  - newrelic-sysmond
