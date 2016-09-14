@@ -1,0 +1,13 @@
+- hosts: standard-stack
+  user: root
+  vars:
+    username: root
+    password: 
+    public_key: /root/.ssh/id_rds.pub
+  roles:
+   - common
+   - newrelic
+   - bash_history
+   - login_alerts 
+   - iptables
+   - graylog
