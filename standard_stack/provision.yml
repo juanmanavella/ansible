@@ -3,7 +3,7 @@
   vars:
     username: root
     password: 
-    public_key: /root/.ssh/id_rds.pub
+    public_key: /root/.ssh/id_rsa.pub
   roles:
    - common
    - newrelic
