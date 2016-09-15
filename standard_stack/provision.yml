@@ -4,6 +4,7 @@
     username: root
     password: 
     public_key: /root/.ssh/id_rsa.pub
+    newrelic_license: ####YOUR KEY#####
   roles:
    - common
    - newrelic

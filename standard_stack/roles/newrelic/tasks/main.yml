@@ -1,17 +1,11 @@
 ---
 
-- name: Install NewRelic
-  apt_key:
-    id: 548C16BF
-    url: https://download.newrelic.com/548C16BF.gpg
-    state=present
-
-
 - name: Add NewRelic repo
-  apt_repository:
-    repo: "deb http://apt.newrelic.com/debian/ newrelic non-free"
-    update_cache: yes
+  shell: echo deb http://apt.newrelic.com/debian/ newrelic non-free >> /etc/apt/sources.list.d/newrelic.list
 
+
+- name: Add NewRelic GPG Key
+  shell: wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
 
 - name: Install NewRelic
   apt:
@@ -21,5 +15,5 @@
 
 
 - name: add NR key
-  shell: /usr/sbin/nrsysmond-config --set license_key=
+  shell: /usr/sbin/nrsysmond-config --set license_key={{ newrelic_license }}
   notify: restart newrelic-sysmond
