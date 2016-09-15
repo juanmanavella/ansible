@@ -1,0 +1,10 @@
+- name: Updates /etc/bash.bashrc to add key logging capabilities to Bash
+  lineinfile:
+    dest=/etc/bash.bashrc
+    line=PROMPT_COMMAND='history -a >(tee -a ~/.bash_history | logger -p local6.info -t "$USER[$$] $SSH_CONNECTION")'
+    regexp="bash_history"
+    owner=root
+    state=present
+    insertafter=EOF
+    create=True
+

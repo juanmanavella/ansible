@@ -4,11 +4,12 @@
     username: root
     password: 
     public_key: /root/.ssh/id_rsa.pub
-    newrelic_license: ####YOUR KEY#####
+    newrelic_license: #### YOUR KEY #####
+    bash_history_notification_email: #### YOUR EMAIL ####
   roles:
    - common
-   - newrelic
-#   - bash_history
+#   - newrelic
+   - bash_history
 #   - login_alerts 
 #   - iptables
 #   - graylog
