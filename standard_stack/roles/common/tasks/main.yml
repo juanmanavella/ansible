@@ -17,6 +17,5 @@
   with_items:
   - fail2ban
   - git-core
-  - redis-server
   - iptables
-  - newrelic-sysmond
+  - vim
