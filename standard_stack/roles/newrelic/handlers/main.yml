@@ -1,16 +1,2 @@
----
-- name: start newrelic-sysmond
-  service:
-    name: newrelic-sysmond
-    state: started
-
-- name: reload newrelic-sysmond
-  service:
-    name: newrelic-sysmond
-    state: reloaded
-
-- name: restart newrelic-sysmond
-  service:
-    name: newrelic-sysmond
-    state: restarted
-
+- name: restart newrelic server monitor daemon
+  service: name=newrelic-sysmond state=restarted enabled=yes

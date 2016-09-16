@@ -19,3 +19,9 @@
   - git-core
   - iptables
   - vim
+  - postfix
+  - mailutils
+  - ncdu
+  - pydf
+  - screen
+  - dnsutils

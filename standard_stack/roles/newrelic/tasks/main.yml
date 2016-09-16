@@ -1,25 +1,13 @@
----
-- name: Check if NewRelic is installed
-  command: dpkg-query -l newrelic-sysmond
-  register: deb_check
+- name: add newrelic repository
+  apt_repository: repo='deb http://apt.newrelic.com/debian/ newrelic non-free' state=present
 
-- name: Add NewRelic repo
-  shell: echo deb http://apt.newrelic.com/debian/ newrelic non-free >> /etc/apt/sources.list.d/newrelic.list
-  when: deb_check.stdout.find('no packages found') != -1-
+- name: add newrelic gpg key
+  apt_key: url=https://download.newrelic.com/548C16BF.gpg state=present
 
+- name: install newrelic server monitoring daemon
+  apt: name=newrelic-sysmond state=latest update_cache=yes
+  notify: restart newrelic server monitor daemon
 
-- name: Add NewRelic GPG Key
-  shell: wget -O- https://download.newrelic.com/548C16BF.gpg | apt-key add -
-  when: deb_check.stdout.find('no packages found') != -1-
-
-- name: Install NewRelic
-  apt:
-    pkg=newrelic-sysmond
-    state=present
-    update_cache=yes
-
-
-- name: add NR key
-  shell: /usr/sbin/nrsysmond-config --set license_key={{ newrelic_license }}
-  when: deb_check.stdout.find('no packages found') != -1-
-  notify: restart newrelic-sysmond
+- name: add newrelic key
+  shell: nrsysmond-config --set license_key="{{ newrelic_server_license_key }}"
+  notify: restart newrelic server monitor daemon
