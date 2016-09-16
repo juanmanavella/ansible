@@ -1,0 +1,9 @@
+- name: Send mails alerting about shell access
+  blockinfile:
+    dest: /etc/bash.bashrc
+    block: |
+      if tty -s
+        then
+        echo "ALERT - Shell Access `hostname -f` on:" `date` `who` | mail -s "Alert: `hostname -f` shell access from `who | cut -d"(" -f2 | cut -d")" -f1`" {{ bash_history_notification_email }}
+      fi
+

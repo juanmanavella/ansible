@@ -10,6 +10,6 @@
    - common
 #   - newrelic
    - bash_history
-#   - login_alerts 
+   - login_alerts
 #   - iptables
 #   - graylog
