@@ -3,11 +3,13 @@
   authorized_key:
     user: "{{ username }}"
     key: "{{ lookup('file', public_key) }}"
-
+  tags:
+     - security
 
 - name: Upgrade packages
   apt: upgrade=safe
-
+  tags:
+     - packages
   
 - name: Install packages
   apt:
@@ -25,3 +27,24 @@
   - pydf
   - screen
   - dnsutils
+  tags:
+     - packages
+
+3# Make sure you can search bash history properly
+3- name: enable history search backward in bash
+3  lineinfile: dest=/etc/inputrc
+3              regexp='^history-search-backward'
+3              insertafter='history-search-backward$'
+3              line='"\e[5~"{{ ":" }} history-search-backward'
+3              state=present
+3  tags:
+3     - bash
+3    
+3- name: enable history search forward in bash
+3  lineinfile: dest=/etc/inputrc
+3              regexp='^history-search-forward'
+3              insertafter='history-search-forward$'
+3              line='"\e[6~"{{ ":" }} history-search-forward'
+3              state=present
+3  tags:
+3     - bash

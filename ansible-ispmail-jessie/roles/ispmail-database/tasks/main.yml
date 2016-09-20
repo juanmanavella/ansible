@@ -2,7 +2,7 @@
 - name: Installing required Python mysqldb module for Ansible to manage databases
   apt: pkg=python-mysqldb state=installed
 # - name: Creating my-cnf for root user
-#   template: src=root-my-cnf.j2 dest=/root/.my.cnf mode=0600
+#   template: src=my-cnf.j2 dest=/root/.my.cnf mode=0600
 - name: creating mailserver MySQL database
   mysql_db: name=mailserver state=present
 - name: creating Roundcube MySQL database

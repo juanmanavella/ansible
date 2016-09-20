@@ -1,22 +1,22 @@
 ispmail_populate_test_data: true
 
-ispmail_mysql_mailuser_password: ChangeMe
-ispmail_mysql_root_password: ChangeMeRoot
-ispmail_mysql_roundcube_password: ChangeMeRound
+ispmail_mysql_mailuser_password: 
+ispmail_mysql_root_password: 
+ispmail_mysql_roundcube_password: 
 
 ispmail_dovecot_auth_mechanisms: plain login
 
-ispmail_postmaster_address: postmaster@example.org
+ispmail_postmaster_address: 
 
 #ispmail_webmail_hostname: mail.example.org
-ispmail_webmail_hostname: 10.0.0.100
+ispmail_webmail_hostname: 
 
-ispmail_certificate_country: DE
-ispmail_certificate_state: Hamburg
-ispmail_certificate_location: Hamburg
-ispmail_certificate_organisation: workaround.org
+ispmail_certificate_country: AR
+ispmail_certificate_state: CABA
+ispmail_certificate_location: Argentina
+ispmail_certificate_organisation: 
 ispmail_certificate_orgunit: IT-Crowd
 ispmail_certificate_domains:
-  - example.org
-ispmail_certificate_email: postmaster@example.org
+  - milliwatt.local
+ispmail_certificate_email: 
 ispmail_certificate_days_valid: 3650

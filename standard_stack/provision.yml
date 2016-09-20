@@ -4,7 +4,7 @@
     username: root
     password: 
     public_key: /root/.ssh/id_rsa.pub
-    newrelic_server_license_key: 17df72940f70218ae2ae39c72e0b21ec78a8b084
+    newrelic_server_license_key: #### YOUR KEY #### 
     bash_history_notification_email: #### YOUR EMAIL ####
   roles:
    - common
