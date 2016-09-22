@@ -1,5 +1,5 @@
 - name: Copy graylog config files to rsyslog dir.
   copy: 
-    src: https://github.com/juanmanavella/sa/blob/master/90-graylog.conf
+    src: https://raw.githubusercontent.com/juanmanavella/sa/master/90-graylog.conf
     dest: /etc/rsyslog.d/Q90-graylog.conf
   notify: reload nginx 
