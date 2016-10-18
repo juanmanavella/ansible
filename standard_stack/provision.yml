@@ -3,9 +3,9 @@
   vars:
     username: root
     password: 
-    public_key: /root/.ssh/id_rsa.pub
-    newrelic_server_license_key: #### YOUR KEY #### 
-    bash_history_notification_email: #### YOUR EMAIL ####
+    public_key_url: ### YOUR SSH PUBLIC KEY URL ###
+    newrelic_server_license_key: ### YOUR NR KEY ###
+    bash_history_notification_email: ### YOUR EMAIL ###
   roles:
    - common
    - newrelic
